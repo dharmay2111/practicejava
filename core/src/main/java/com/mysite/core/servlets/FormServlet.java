@@ -50,10 +50,10 @@ public class FormServlet extends SlingAllMethodsServlet {
                 double bmi = calculateBMI(
                         Double.parseDouble(weight),
                         Double.parseDouble(height));
-                resourceResolver= getServiceUser(resourceResolverFactory);
+                resourceResolver = getServiceUser(resourceResolverFactory);
                 String path = "/content/mysite/us/en";
-                Session session= resourceResolver.adaptTo(Session.class);
-                if(session!=null) {
+                Session session = resourceResolver.adaptTo(Session.class);
+                if (session != null) {
                     Node node = session.getNode(path);
                     node.addNode("Dharma");
                    /* node.setProperty("weight",weight);
@@ -74,7 +74,7 @@ public class FormServlet extends SlingAllMethodsServlet {
         return weight / (height * height);
     }
 
-    public  ResourceResolver getServiceUser(ResourceResolverFactory resourceResolverFactory) throws LoginException {
+    public ResourceResolver getServiceUser(ResourceResolverFactory resourceResolverFactory) throws LoginException {
         HashMap<String, Object> param = new HashMap<String, Object>();
         param.put(ResourceResolverFactory.SUBSERVICE, "getResourceResolver");
         resourceResolver = resourceResolverFactory.getServiceResourceResolver(param);
@@ -82,6 +82,4 @@ public class FormServlet extends SlingAllMethodsServlet {
     }
 
 }
-//hello//
 
-//firstcommit
