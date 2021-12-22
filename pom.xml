@@ -623,6 +623,11 @@ Bundle-DocURL:
             <scope>provided</scope>
             <type>content-package</type>
         </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-imaging</artifactId>
+                <version>1.0-alpha2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

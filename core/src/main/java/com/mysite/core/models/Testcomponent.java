@@ -1,23 +1,26 @@
 package com.mysite.core.models;
 
+import com.mysite.core.services.Practice;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class Testcomponent {
-    @ValueMapValue
     private String firstname;
     @ValueMapValue
     private String lastname;
+    @OSGiService
+    Practice practice;
 
 
     public String getFirstname() {
-        if(firstname.equals("Dharma")){
+        /*if(firstname.equals("Dharma")){
             firstname="Hello Dharma";
-        }
-        return firstname;
+        }*/
+        return firstname=practice.username();
     }
 
     public void setFirstname(String firstname) {
